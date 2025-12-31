@@ -1,15 +1,14 @@
 import { useState } from "react";
 import cinematicBg from "@/assets/cinematic-bg.jpg";
 import GlassNavigation from "@/components/GlassNavigation";
-import EventsPanel from "@/components/EventsPanel";
 import HeroSection from "@/components/HeroSection";
-import RegistrationPanel from "@/components/RegistrationPanel";
-import SpeakersSection from "@/components/SpeakersSection";
+import ScheduleSection from "@/components/ScheduleSection";
 import AllEventsSection from "@/components/AllEventsSection";
 import AboutSection from "@/components/AboutSection";
+import GeneralGuidelinesSection from "@/components/GeneralGuidelinesSection";
 import LiquidBackground from "@/components/LiquidBackground";
-import BladeOfLucidus from "@/components/BladeOfLucidus";
 import SponsorsSection from "@/components/SponsorsSection";
+import SpeakersSection from "@/components/SpeakersSection";
 import Footer from "@/components/Footer";
 
 type Stage = "sukuna" | "intro-sequence" | "settle";
@@ -18,14 +17,12 @@ type IndexProps = {
   stage: Stage;
   blurAmount?: number;
   overlayOpacity?: number;
-  onRegistrationSuccess: () => void;
 };
 
 const Index = ({
   stage,
   blurAmount = 0,
   overlayOpacity = 0,
-  onRegistrationSuccess,
 }: IndexProps) => {
   const isIntroSequence = stage === "intro-sequence";
   const isSettled = stage === "settle";
@@ -85,51 +82,37 @@ const Index = ({
         {/* Navigation */}
         <GlassNavigation />
 
-        {/* Main layout */}
-        <div className="flex flex-col lg:flex-row gap-6 justify-center items-start max-w-7xl mx-auto">
-          {/* Left */}
-          <div className="hidden lg:block">
-            <EventsPanel />
-          </div>
-
-          {/* Center */}
+        {/* Hero / Logo Section - Full Width */}
+        <div className="max-w-5xl mx-auto">
           <HeroSection stage={stage} />
-
-          {/* Right */}
-          <div className="hidden lg:block">
-            <RegistrationPanel onSuccess={onRegistrationSuccess} />
-          </div>
         </div>
 
-        {/* Mobile layout */}
-        <div className="lg:hidden mt-6 space-y-6">
-          <div className="flex justify-center">
-            <EventsPanel />
-          </div>
-          <div className="flex justify-center">
-            <RegistrationPanel onSuccess={onRegistrationSuccess} />
-          </div>
+        {/* Schedule Section - Full Width */}
+        <div className="mt-6 max-w-7xl mx-auto">
+          <ScheduleSection />
         </div>
 
-        {/* Sections */}
-        <div className="mt-8 max-w-6xl mx-auto">
-          <AllEventsSection />
-        </div>
-
+        {/* About Lucidus Section */}
         <div className="mt-8 max-w-5xl mx-auto">
           <AboutSection />
         </div>
 
-        <div className="mt-8 max-w-5xl mx-auto">
-          <SpeakersSection />
+        {/* Events Section */}
+        <div className="mt-8 max-w-6xl mx-auto">
+          <AllEventsSection />
         </div>
 
-        {/* Mini game */}
-        <BladeOfLucidus />
+        {/* General Guidelines Section */}
+        <GeneralGuidelinesSection />
 
-        {/* Sponsors */}
-        <div className="mt-10">
+        {/* Sponsors / Backed By Section */}
+        <div className="mt-8">
           <SponsorsSection />
+        </div>
+
+        {/* Team Section */}
+        <div className="mt-8 max-w-6xl mx-auto">
+          <SpeakersSection />
         </div>
 
         {/* Footer */}

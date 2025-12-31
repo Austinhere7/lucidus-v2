@@ -47,7 +47,6 @@ const App = () => {
               stage={stage}
               blurAmount={blurAmount}
               overlayOpacity={overlayOpacity}
-              onRegistrationSuccess={() => {}}
             />
           }
         />

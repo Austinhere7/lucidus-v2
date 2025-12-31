@@ -19,19 +19,19 @@ const IntroSequence = ({
 
   useEffect(() => {
     // Start logo fade out and blur reduction simultaneously
-    // Logo fade: 350ms, Blur reduction: 600ms (both start at same time)
+    // Logo fade: 200ms, Blur reduction: 700ms (both start at same time)
     const startTime = performance.now();
-    const logoFadeDuration = 350; // Logo fade-out duration (300-400ms)
-    const blurReductionDuration = 600; // Blur reduction duration (500-700ms)
+    const logoFadeDuration = 200; // Logo fade-out duration (quick)
+    const blurReductionDuration = 700; // Blur reduction duration (600-800ms)
 
     const animate = (timestamp: number) => {
       const elapsed = timestamp - startTime;
       
-      // Logo fade progress (0 → 1 over 350ms)
+      // Logo fade progress (0 → 1 over 200ms)
       const logoProgress = Math.min(elapsed / logoFadeDuration, 1);
       setLogoOpacity(1 - logoProgress);
 
-      // Blur reduction progress (0 → 1 over 600ms)
+      // Blur reduction progress (0 → 1 over 700ms)
       const blurProgress = Math.min(elapsed / blurReductionDuration, 1);
       
       // Fade out black background (SukunaIntro) (opacity 1 → 0) - same as blur
@@ -71,7 +71,7 @@ const IntroSequence = ({
         className="absolute inset-0 flex items-center justify-center"
         style={{
           opacity: logoOpacity,
-          transition: "opacity 350ms ease-in-out",
+          transition: "opacity 200ms ease-in-out",
         }}
       >
         <img

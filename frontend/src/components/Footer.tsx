@@ -2,7 +2,7 @@ import { Twitter, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-12 px-4">
+    <footer id="contact" className="w-full py-12 px-4">
       <div className="max-w-6xl mx-auto glass-panel rounded-3xl p-8 md:p-10 backdrop-blur-2xl bg-white/5 border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.25)]">
         <div className="grid md:grid-cols-3 gap-8 md:gap-10">
           <div className="space-y-4 text-foreground">

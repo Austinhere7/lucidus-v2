@@ -22,6 +22,7 @@ const SpeakersSection = () => {
   return (
     <div 
       ref={ref}
+      id="team"
       className={`glass-panel rounded-3xl p-8 w-full animate-ambient-breathe ${
         isVisible ? 'reveal-visible' : 'reveal-hidden'
       }`}

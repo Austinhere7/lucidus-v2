@@ -25,6 +25,7 @@ const AllEventsSection = () => {
     <>
       <div 
         ref={ref}
+        id="events"
         className={`glass-panel rounded-3xl p-6 w-full subtle-glow-shift deep-ambient-float glass-edge-light hover-react-subtle depth-layer-panel ${
           isVisible ? 'reveal-visible' : 'reveal-hidden'
         }`}
